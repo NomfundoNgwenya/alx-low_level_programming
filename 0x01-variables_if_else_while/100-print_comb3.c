@@ -6,21 +6,28 @@
  */
 int main(void)
 {
-	for (int first = 0; first <= 9; first++)
+	int num_1, num_2;
+
+	num_1 = '0';
+	num_2 = '0';
+
+	while (num_1 <= '9')
 	{
-		for (int second = first + 1; second <= 9; second++)
+		while (num_2 <= '9')
 		{
-			putchar(first + '0');
-			putchar(second + '0');
-
-
-			if (first != 9 || second != 8)
+			if (num_1 <num_2)
 			{
-				putchar(',');
-				putchar(',');
+				putchar(num_1);
+				putchar(num_2);
+				if (num_1 != '8' || (num_1 == '8' && num_2 != '9'))
+				{
+					putchar(',');
+					putchar(' ');
+				}
 			}
-
-		}
+			num_2++;
+		}num_1++;
+		num_2 = '0';
 	}
 	putchar('\n');
 	return (0);
